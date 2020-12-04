@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Вертикальное выпадающее меню на css</title>
+    <link href="style-menu-1.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="js/html2canvas.js"></script>
+    <script>
+
+
+      function getPDF() {
+        doCanvas();
+      }
+
+      function doCanvas() {
+        html2canvas(document.querySelector("#myDiv")).then((canvas) => {
+          doPDF(canvas);
+        });
+      }
+
+
+      function doPDF(canvas) {
+        var doc = new jsPDF("p", "mm", "a4");
+        var width = doc.internal.pageSize.width;
+        var height = doc.internal.pageSize.height;
+        doc.addImage(canvas, 'PNG', 0, 0);
+        doc.addPage ();
+        doc.save("test.pdf");
+      }
+    </script>
+  </head>
+  <body>
+    <header>Вырастай-ка с развивашкой</header>
+    <div id="conteiner">
+      <div id="left">
+        <nav id="menuVertical">
+          <ul>
+            <li><a href="menu-1.html">Главная страница</a></li>
+            <li>
+              <a href="#m2">Тематические карточки</a>
+              <ul>
+                <li><a href="theme_cards.html">Дикие животные</a></li>
+                <li><a href="theme_cards2.html">Зоопарк</a></li>
+                <li><a href="theme_cards3.html">Малыши</a></li>
+                <li><a href="theme_cards4.html">Пожарный</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#m3">Алфавит</a>
+              <ul>
+                <li><a href="alphabet.html">Алфавит постер</a></li>
+                <li><a href="alphabet_A.html">Буква А</a></li>
+                <li><a href="alphabet_B.html">Буква Б</a></li>
+                <li><a href="alphabet_V.html">Буква В</a></li>
+                <li><a href="alphabet_G.html">Буква Г</a></li>
+                <li><a href="alphabet_D.html">Буква Д</a></li>
+                <li><a href="alphabet_E.html">Буква Е</a></li>
+                <li><a href="alphabet_J.html">Буква Ж</a></li>
+                <li><a href="alphabet_Z.html">Буква З</a></li>
+              </ul>
+            </li>
+            <li><a href="#m4">Игра липучки</a>
+                <ul>
+                    <li><a href="jungle.html">Джунгли</a></li>
+                    <li><a href="winter_forest.html">Зимний лес</a></li>
+                    <li><a href="forest.html">Лес</a></li>
+                    <li><a href="north_pole.html">Северный полюс</a></li>
+                    <li><a href="farm.html">Ферма</a></li>
+            </ul>
+            </li>
+            <li><a href="#m5">Карточки</a>
+                <ul>
+                    <li><a href="animals.html">Животные</a></li>
+                    <li><a href="musical.html">Музыкальные инструменты</a></li>
+                    <li><a href="insects.html">Насекомые</a></li>
+                    <li><a href="produce.html">Овощи и травы</a></li>
+                    <li><a href="special.html">Спецтехника</a></li>
+                    <li><a href="fruits.html">Фрукты и ягоды</a></li>
+                </ul>
+            </li>
+            <li><a href="image.html">Собери картинку</a></li>
+            <li><a href="blue_tractor.html">Синий трактор</a></li>
+            <li><a href="three_cats.html">Три кота</a></li>
+        </ul>
+        </nav>
+        <!--Информация на странице-->
+      </div>
+      <!--left-->
+      <div>
+        <a href="#" onclick="getPDF()">Скачать PDF</a>
+        <div id="myDiv">
+        <p>
+          <a href="images/Буква Г/1.png"
+            ><img src="images/Буква Г/1.png" width="700" height="700"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/2.png"
+            ><img
+              src="images/Буква Г/2.png"
+              width="700"
+              height="700"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/3.png"
+            ><img
+              src="images/Буква Г/3.png"
+              width="700"
+              height="700"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/4.png"
+            ><img
+              src="images/Буква Г/4.png"
+              width="700"
+              height="700"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/5.png"
+            ><img
+              src="images/Буква Г/5.png"
+              width="700"
+              height="700"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/6.png"
+            ><img
+              src="images/Буква Г/6.png"
+              width="50"
+              height="50"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/7.png"
+            ><img
+              src="images/Буква Г/7.png"
+              width="50"
+              height="50"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/8.png"
+            ><img
+              src="images/Буква Г/8.png"
+              width="50"
+              height="50"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/9.png"
+            ><img
+              src="images/Буква Г/9.png"
+              width="50"
+              height="50"
+              alt="Пример"
+          /></a>
+        </p>
+        <p>
+          <a href="images/Буква Г/10.png"
+            ><img
+              src="images/Буква Г/10.png"
+              width="50"
+              height="50"
+              alt="Пример"
+          /></a>
+        </p>
+    </div>
+      </div>
+    </div>
+  </body>
+</html>
